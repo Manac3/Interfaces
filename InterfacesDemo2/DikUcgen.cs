@@ -6,6 +6,7 @@
 
         public double Taban { get; set; }
         public double Yukseklik { get; set; }
+
         public double AlanHesapla()
         {
             return Taban * Yukseklik / 2;

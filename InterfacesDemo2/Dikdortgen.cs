@@ -10,6 +10,7 @@ namespace InterfacesDemo2
     {
         public double Taban { get; set; }
         public double Yukseklik { get; set; }
+
         public double AlanHesapla()
         {
             return Taban * Yukseklik;

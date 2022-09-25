@@ -1,12 +1,11 @@
 ﻿namespace InterfacesDemo2
 {
-    interface IKoseliSekiller
+    interface IKoseliSekiller : IHesapla
     {
         double Taban { get; set; }
         double Yukseklik { get; set; }
 
-        double AlanHesapla();
-        double CevreHesapla();
+       
 
     }
 }

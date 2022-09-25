@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            IKoseliSekiller koseliSekil= null;
+            IKoseliSekiller koseliSekil = null;
+            IYuvarlakSekil yuvarlakSekil = null;
             Console.WriteLine("Şekil (1: dikdörtgen, 2: DikÜçgen, 3: daire): ");
             string sekil = Console.ReadLine();
             double taban;
@@ -32,13 +33,26 @@
                         };
                         break;
                 }
-            }
-            else
-            {
-                //TODO; //bak bu todo ya , eklenti gibi bi şey kısayolunu bul
-            }
-            Console.WriteLine($"Alan: {koseliSekil.AlanHesapla()}" +
+                Console.WriteLine($"Alan: {koseliSekil.AlanHesapla()}" +
                 $"\nÇevre: {koseliSekil.CevreHesapla()}");
+            }
+            else //3:Darire
+            {
+
+                Console.Write("Yarıçap: ");
+                double yaricap = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Pî 3 mü? (e: evet h: hayır): ");
+                bool pi3Mu = Console.ReadLine() == "e" ? true : false;
+                yuvarlakSekil = new Daire()
+                {
+                    Pi3mu = pi3Mu,
+                    YariCap = yaricap
+                };
+                Console.WriteLine($"Alan: {yuvarlakSekil.AlanHesapla()}" +
+                $"\nÇevre: {yuvarlakSekil.CevreHesapla()}");
+
+            }
+
         }
     }
 }
